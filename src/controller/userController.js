@@ -3,6 +3,9 @@ const jwt=require("jsonwebtoken");
 const validator=require("../validator/validator");
 const valid=require("validator");
 
+
+// =================================== Create New User ==========================================
+
 const creatUser= async function(req,res){
 
     try {
@@ -10,7 +13,6 @@ const creatUser= async function(req,res){
         if(Object.keys(data).length==0) return res.status(400).send({status:false,message:"Please provide details"});
         
     let {title,name,phone,email,password,address}=data;
-
     
     if(!title) return res.status(400).send({status:false,message:"please  title is mendatory"});
      title=title.trim()
@@ -74,7 +76,7 @@ const creatUser= async function(req,res){
 
 
 
-// user LOGIN
+//===================================Login User With Credential and create Token ===================================
 
 const loginUser=async function(req,res){
    try{ 
