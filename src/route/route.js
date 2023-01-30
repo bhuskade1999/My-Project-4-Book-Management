@@ -3,7 +3,7 @@ const middlwWare=require("../middleware/middleware")
 const router=express.Router();
 const userController=require("../controller/userController");
 const bookController=require("../controller/bookController");
-const reviewController=require("../controller/reviewController")
+const reviewController=require("../controller/review")
 
 router.post("/register",userController.creatUser);
 router.post("/login",userController.loginUser);
