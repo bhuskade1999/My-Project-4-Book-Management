@@ -14,9 +14,9 @@ const creatUser= async function(req,res){
         
     let {title,name,phone,email,password,address}=data;
     
-    if(!title) return res.status(400).send({status:false,message:"please  title is mendatory"});
+    if(!title) return res.status(401).send({status:false,message:"please  title is mendatory"});
      title=title.trim()
-    if( !validator.isValid(title)) return res.status(400).send({status:false,message:"please provide Proper title"});
+    if( !validator.isValid(title)) return res.status(401).send({status:false,message:"please provide Proper title"});
     if(!(["Mr", "Mrs", "Miss"].includes(title))) return res.status(400).send({status:false,message:"please provide valid title  like Mr,Miss,Mrs"});
 
     if(!name || !validator.isValid(name)) return res.status(400).send({status:false,message:"please provide Proper name"});

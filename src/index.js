@@ -6,7 +6,11 @@ const cors = require("cors")
 const app=express()
 app.use(express.json())
 app.use(cors())
-mongoose.connect("mongodb+srv://nishant55:1234@nishant99.et97kst.mongodb.net/group10Databases", {
+var path = require("path")
+const env =  require("dotenv")
+env.config({path: path.join(__dirname,"../.env")})
+
+mongoose.connect(process.env.Mongodb_Connect, {
     useNewUrlParser: true
 })
 .then( () => console.log("MongoDb is connected"))
@@ -15,6 +19,6 @@ mongoose.connect("mongodb+srv://nishant55:1234@nishant99.et97kst.mongodb.net/gro
 
 app.use('/',route)
 
-app.listen(3000,function(){
-    console.log('express is running on port 3000')
+app.listen(process.env.PORT,function(){
+    console.log('express is running on port :', process.env.PORT)
 });
