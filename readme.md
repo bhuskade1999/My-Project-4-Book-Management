@@ -1,6 +1,7 @@
 # Book Management
 
-### This project contain backend code of book managing platform , where  user can create account, creating books, updating books, deleting books, and other user can review the books which was published... 
+### This project contain backend code of book managing platform , where  user can create account, creating books, updating books, deleting books, and other user can review the books which was published.
+- used jsonwebtoken for authentication and authorisation
 ##
 
 ### Teck Stack :
